@@ -1,0 +1,341 @@
+.phase3-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Dept selector */
+.dept-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.dept-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: white;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.dept-btn:hover {
+  border-color: var(--phase3);
+  color: var(--phase3);
+}
+
+.dept-btn.active {
+  background: var(--phase3);
+  border-color: var(--phase3);
+  color: white;
+}
+
+.dept-btn-count {
+  background: rgba(255,255,255,0.25);
+  border-radius: var(--radius-full);
+  padding: 1px 6px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.dept-btn:not(.active) .dept-btn-count {
+  background: var(--gray-100);
+  color: var(--gray-500);
+}
+
+/* Employee table */
+.employee-table-section {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.employee-table-section > .section-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--gray-200);
+  margin: 0;
+}
+
+.hike-table-wrap {
+  overflow-x: auto;
+  max-height: 520px;
+  overflow-y: auto;
+}
+
+.hike-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.hike-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.hike-table th {
+  background: var(--gray-50);
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  border-bottom: 1.5px solid var(--gray-200);
+  white-space: nowrap;
+}
+
+.hike-table th.text-right { text-align: right; }
+.hike-table th.text-center { text-align: center; }
+
+.sortable-th {
+  cursor: pointer;
+}
+
+.sortable-th:hover {
+  background: var(--gray-100) !important;
+  color: var(--gray-700) !important;
+}
+
+.hike-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+  color: var(--gray-700);
+}
+
+.hike-table td.text-right { text-align: right; }
+.hike-table td.text-center { text-align: center; }
+.hike-table td.font-bold { font-weight: 700; }
+
+.hike-table tr.row-disabled td {
+  background: var(--gray-50);
+  opacity: 0.6;
+}
+
+.hike-table tr.row-warning td {
+  background: #fffbeb;
+}
+
+.hike-table tbody tr:hover td {
+  background: #f8faff;
+}
+
+.hike-table tr.row-disabled:hover td {
+  background: var(--gray-50);
+}
+
+/* Employee cell */
+.emp-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.emp-avatar-sm {
+  width: 30px;
+  height: 30px;
+  background: var(--primary-light);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.emp-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+.emp-meta {
+  font-size: 11px;
+  color: var(--gray-400);
+}
+
+/* Grade badge */
+.grade-badge-sm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Perf stars */
+.perf-stars {
+  font-size: 13px;
+  color: #f59e0b;
+  letter-spacing: 1px;
+}
+
+/* Compa ratio */
+.compa-ratio {
+  font-size: 13px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+.compa-ratio.low { background: #dbeafe; color: var(--primary); }
+.compa-ratio.mid { background: var(--success-bg); color: var(--success); }
+.compa-ratio.high { background: var(--warning-bg); color: var(--warning); }
+
+/* Suggested hike */
+.suggested-hike {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gray-500);
+  background: var(--gray-100);
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+}
+
+/* Hike input */
+.hike-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  justify-content: flex-end;
+}
+
+.hike-input {
+  width: 56px;
+  text-align: right;
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 4px 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-800);
+  background: white;
+  outline: none;
+  transition: var(--transition);
+}
+
+.hike-input:focus {
+  border-color: var(--phase3);
+  box-shadow: 0 0 0 2px rgba(6, 95, 70, 0.1);
+}
+
+.hike-input.override {
+  border-color: #f59e0b;
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.hike-input:disabled {
+  background: var(--gray-100);
+  color: var(--gray-500);
+  cursor: not-allowed;
+}
+
+.override-flag {
+  color: #f59e0b;
+  font-size: 14px;
+  cursor: help;
+}
+
+/* New CTC */
+.new-ctc {
+  font-weight: 700;
+  color: var(--gray-800);
+}
+
+/* Cost impact */
+.cost-impact {
+  font-weight: 600;
+  color: var(--success);
+  font-size: 12px;
+}
+
+/* Justification */
+.justification-input {
+  width: 160px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  padding: 4px 7px;
+  font-size: 12px;
+  color: var(--gray-700);
+  background: white;
+  outline: none;
+}
+
+.justification-input:focus {
+  border-color: var(--primary-light);
+}
+
+.justification-input:disabled {
+  background: var(--gray-50);
+  cursor: not-allowed;
+}
+
+/* Submit panel */
+.submit-panel {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.submit-panel-left {
+  flex: 1;
+}
+
+.submit-panel-right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 240px;
+  align-items: flex-end;
+}
+
+.budget-bar-container {
+  background: white;
+  border-radius: var(--radius-lg);
+}
+
+.submit-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--success-bg);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+}
+
+/* Phase 3 checkbox-item */
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}

@@ -1,0 +1,73 @@
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--gray-50);
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.3s ease;
+}
+
+.app-content {
+  flex: 1;
+  margin-top: var(--header-height);
+  padding: 24px;
+  overflow-y: auto;
+  min-height: calc(100vh - var(--header-height));
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 4px;
+}
+
+.page-header p {
+  color: var(--gray-500);
+  font-size: 14px;
+}
+
+/* Phase banner */
+.phase-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--radius-lg);
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.phase-banner.phase-1 { background: var(--phase1-bg); color: var(--phase1); border: 1px solid #bfdbfe; }
+.phase-banner.phase-2 { background: var(--phase2-bg); color: var(--phase2); border: 1px solid #a5f3fc; }
+.phase-banner.phase-3 { background: var(--phase3-bg); color: var(--phase3); border: 1px solid #a7f3d0; }
+.phase-banner.phase-4 { background: var(--phase4-bg); color: var(--phase4); border: 1px solid #fde68a; }
+.phase-banner.phase-5 { background: var(--phase5-bg); color: var(--phase5); border: 1px solid #fecaca; }
+
+.app-main-collapsed {
+  margin-left: 60px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .app-main {
+    margin-left: 0;
+  }
+  .app-main-collapsed {
+    margin-left: 0;
+  }
+  .app-content {
+    padding: 16px;
+  }
+}

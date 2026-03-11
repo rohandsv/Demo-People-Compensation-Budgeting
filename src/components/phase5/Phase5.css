@@ -1,0 +1,517 @@
+/* ============================================================
+   Phase 5 — Payroll Integration — Complete Styles
+   ============================================================ */
+
+.phase5-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Stat Cards (local overrides) ────────────────────────── */
+.stat-card-primary  { border-top: 3px solid var(--primary); }
+.stat-card-success  { border-top: 3px solid var(--success); }
+.stat-card-warning  { border-top: 3px solid #d97706; }
+.stat-card-danger   { border-top: 3px solid var(--danger); }
+.stat-card-teal     { border-top: 3px solid #0e7490; }
+
+/* ── Phase 5 Generic Table ───────────────────────────────── */
+.phase5-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.phase5-table th {
+  background: var(--gray-50);
+  padding: 10px 14px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  border-bottom: 1.5px solid var(--gray-200);
+  white-space: nowrap;
+}
+
+.phase5-table th.text-right { text-align: right; }
+
+.phase5-table td {
+  padding: 12px 14px;
+  font-size: 13px;
+  color: var(--gray-700);
+  border-bottom: 1px solid var(--gray-100);
+  vertical-align: middle;
+}
+
+.phase5-table td.text-right { text-align: right; }
+.phase5-table td.font-bold  { font-weight: 700; }
+
+.phase5-table tbody tr:last-child td { border-bottom: none; }
+.phase5-table tbody tr:hover td { background: var(--gray-50); }
+
+.phase5-table tr.row-success td {
+  background: #f0fdf4;
+}
+
+/* Total / footer row */
+.report-total-row td {
+  font-weight: 700;
+  background: var(--gray-50) !important;
+  border-top: 2px solid var(--gray-200);
+  border-bottom: none;
+}
+
+/* ── Employee name cell ─────────────────────────────────── */
+.emp-name-cell-p5 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.emp-avatar-sm-p5 {
+  width: 32px;
+  height: 32px;
+  background: var(--primary-light);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Payroll Sync ───────────────────────────────────────── */
+.payroll-config {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+}
+
+.sync-progress {
+  margin-top: 16px;
+}
+
+.sync-progress-bar {
+  height: 10px;
+  background: var(--gray-200);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.sync-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  border-radius: 99px;
+  transition: width 0.15s ease;
+}
+
+.sync-progress-label {
+  font-size: 12px;
+  color: var(--gray-500);
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ── Increment Letters ──────────────────────────────────── */
+.letter-preview {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 13px;
+  line-height: 1.75;
+  padding: 8px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.letter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.letter-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.letter-date {
+  font-size: 12px;
+  color: var(--gray-500);
+}
+
+.letter-body p {
+  margin-bottom: 12px;
+  color: var(--gray-700);
+}
+
+.letter-comp-table {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 16px 0;
+}
+
+.letter-comp-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.letter-comp-table td {
+  padding: 10px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+}
+
+.letter-comp-table tr:last-child td { border-bottom: none; }
+
+.letter-comp-table tr.comp-row td {
+  font-weight: 500;
+}
+
+.letter-comp-table tr.comp-row.highlight {
+  background: var(--success-bg);
+}
+
+.letter-comp-table tr.comp-row.highlight td {
+  color: var(--success);
+}
+
+/* ── Total Rewards ──────────────────────────────────────── */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--gray-500);
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  background: var(--gray-200);
+  color: var(--gray-700);
+}
+
+.expanded-rewards-row td {
+  background: var(--gray-50) !important;
+  padding: 0 !important;
+}
+
+.rewards-breakdown {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0;
+  padding: 16px 20px;
+  border-top: 1px solid var(--gray-200);
+}
+
+.rewards-section {
+  padding: 12px 16px;
+  border-right: 1px solid var(--gray-200);
+}
+
+.rewards-section:last-child {
+  border-right: none;
+}
+
+.rewards-section-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gray-500);
+  margin-bottom: 10px;
+}
+
+.rewards-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-size: 12px;
+  color: var(--gray-600);
+  border-bottom: 1px dashed var(--gray-100);
+}
+
+.rewards-item:last-child {
+  border-bottom: none;
+}
+
+.rewards-item span:last-child {
+  font-weight: 600;
+  color: var(--gray-800);
+}
+
+/* ── Employee Notifications ─────────────────────────────── */
+.notif-template {
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.notif-template-header {
+  background: var(--gray-50);
+  padding: 12px 16px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-700);
+}
+
+.notif-template-body {
+  padding: 16px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+.notif-template-body p {
+  margin-bottom: 12px;
+}
+
+.template-var {
+  background: #fef3c7;
+  color: #92400e;
+  padding: 1px 5px;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.notif-comp-summary {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+.notif-comp-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 14px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--gray-100);
+  color: var(--gray-700);
+}
+
+.notif-comp-row:last-child { border-bottom: none; }
+
+.notif-comp-row.highlight {
+  background: var(--success-bg);
+  color: var(--success);
+  font-weight: 700;
+}
+
+/* ── Finance Cost Report ────────────────────────────────── */
+.mini-bar {
+  width: 64px;
+  height: 6px;
+  background: var(--gray-200);
+  border-radius: 99px;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+.mini-bar-fill.ok      { background: #22c55e; }
+.mini-bar-fill.warning { background: #f59e0b; }
+.mini-bar-fill.danger  { background: #ef4444; }
+
+.util-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.util-status.ok      { background: var(--success-bg); color: var(--success); }
+.util-status.warning { background: var(--warning-bg); color: var(--warning); }
+.util-status.danger  { background: var(--danger-bg);  color: var(--danger); }
+
+/* CSS Bar Chart */
+.cost-chart {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.cost-chart-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gray-700);
+  margin-bottom: 16px;
+}
+
+.cost-chart-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  height: 160px;
+  padding: 0 8px;
+}
+
+.cost-chart-item {
+  flex: 1;
+}
+
+.cost-chart-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.cost-chart-bar-wrap {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  position: relative;
+  min-height: 120px;
+}
+
+.cost-chart-allocated {
+  width: 40%;
+  background: var(--gray-200);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease;
+  min-height: 4px;
+}
+
+.cost-chart-consumed {
+  width: 40%;
+  background: var(--primary-light);
+  border-radius: 4px 4px 0 0;
+  transition: height 0.5s ease;
+  min-height: 4px;
+}
+
+.cost-chart-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gray-600);
+  margin-top: 6px;
+  text-align: center;
+}
+
+.cost-chart-value {
+  font-size: 10px;
+  color: var(--gray-500);
+  text-align: center;
+  margin-top: 2px;
+}
+
+.cost-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--gray-100);
+}
+
+.chart-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--gray-600);
+}
+
+.chart-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+/* ── Cycle Complete Banner ──────────────────────────────── */
+.cycle-complete-banner {
+  background: linear-gradient(135deg, #065f46, #0f766e);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+}
+
+.cycle-complete-banner h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.cycle-complete-banner p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 20px;
+}
+
+/* ── Output / Success Banner ───────────────────────────── */
+.output-banner {
+  background: var(--success-bg);
+  border: 1px solid #a7f3d0;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--success);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rewards-breakdown {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .payroll-config {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rewards-breakdown {
+    grid-template-columns: 1fr;
+  }
+
+  .cost-chart-bars {
+    gap: 8px;
+  }
+
+  .phase5-table th:nth-child(n+5),
+  .phase5-table td:nth-child(n+5) {
+    display: none;
+  }
+}

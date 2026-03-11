@@ -1,0 +1,129 @@
+.phase-nav {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+  gap: 0;
+}
+
+.phase-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px 8px;
+  border-radius: var(--radius-md);
+  transition: var(--transition);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.phase-step:hover:not(.pending) {
+  background: var(--gray-50);
+}
+
+.phase-step.pending {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.phase-step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+  background: var(--gray-100);
+  border: 2px solid var(--gray-200);
+  color: var(--gray-500);
+  transition: var(--transition);
+}
+
+.phase-step.active .phase-step-circle {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+  box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.15);
+}
+
+.phase-step.completed .phase-step-circle {
+  background: var(--success);
+  border-color: var(--success);
+  color: white;
+}
+
+/* Phase-specific active colors */
+.phase-step[data-phase="1"].active .phase-step-circle { background: #1e3a8a; border-color: #1e3a8a; }
+.phase-step[data-phase="2"].active .phase-step-circle { background: #0e7490; border-color: #0e7490; }
+.phase-step[data-phase="3"].active .phase-step-circle { background: #065f46; border-color: #065f46; }
+.phase-step[data-phase="4"].active .phase-step-circle { background: #92400e; border-color: #92400e; }
+.phase-step[data-phase="5"].active .phase-step-circle { background: #991b1b; border-color: #991b1b; }
+
+.phase-step-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.phase-step-label {
+  font-size: 11px;
+  color: var(--gray-400);
+  font-weight: 500;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.phase-step.active .phase-step-label {
+  color: var(--primary-light);
+}
+
+.phase-step-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-700);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+.phase-step.active .phase-step-name {
+  color: var(--gray-900);
+}
+
+.phase-step.pending .phase-step-name {
+  color: var(--gray-400);
+}
+
+/* Connector line */
+.phase-connector {
+  flex: 1;
+  min-width: 24px;
+  height: 2px;
+  background: var(--gray-200);
+  margin: 0 4px;
+  position: relative;
+}
+
+.phase-connector.completed {
+  background: var(--success);
+}
+
+@media (max-width: 900px) {
+  .phase-step-info {
+    display: none;
+  }
+  .phase-connector {
+    min-width: 12px;
+  }
+}
